@@ -1,0 +1,22 @@
+{
+     "signIn" : "Sign in",
+     "greeting" : "Hi! Welcome back, you've been missed",
+     "email" : "Email",
+     "forgotPassword" : "Forgot password?",
+     "socialsSignIn" : "Or sign in with",
+     "noAccount" : "Don't have an account?",
+     "signUp" : "Sign up",
+     "newPassword" : "New password",
+     "passwordRule" : "Your new password must be different from previously used passwords.",
+     "confirmPassword" : "Confirm password",
+     "createPassword" : "Create new password",
+     "newAccountDescription" : "Fill your information below or register with your social account",
+     "name" : "Name",
+     "emailWarning" : "Enter a valid email",
+     "passwordWarning" : "password must be at least 8 characters, \n with lower case, upper case,\n numbers, and special characters",
+     "agreeWith" : "Agree With",
+     "termsConditions" : "Terms & conditions",
+     "haveAccount" : "already have an account?",
+     "password" : "Password",
+     "changeLanguage" : "Change language"
+}
