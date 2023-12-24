@@ -40,6 +40,8 @@ dependencies:
   scoped_model: ^2.0.0
   flutter_localizations:
     sdk: flutter
+  syncfusion_flutter_calendar: ^24.1.41
+  persistent_bottom_nav_bar: ^5.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

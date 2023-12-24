@@ -7,6 +7,7 @@ import 'package:uni_verse/presentation/create_account.dart';
 import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
+import 'package:uni_verse/presentation/time_management.dart';
 
 import 'generated/l10n.dart';
 
@@ -30,7 +31,7 @@ class UniVerse extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   locale: AppLocale().currentLocale,
                   supportedLocales: S.delegate.supportedLocales,
-                  localizationsDelegates: [
+                  localizationsDelegates: const [
                     GlobalMaterialLocalizations.delegate,
                     GlobalWidgetsLocalizations.delegate,
                     GlobalCupertinoLocalizations.delegate,
@@ -48,7 +49,8 @@ class UniVerse extends StatelessWidget {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
                     NewPassword.route: (context) => const NewPassword(),
-                    HomePage.route: (context) => const HomePage()
+                    HomePage.route: (context) => const HomePage(),
+                    TimeManagement.route: (context) => const TimeManagement()
                   },
                 );
               },
