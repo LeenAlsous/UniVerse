@@ -6,10 +6,10 @@ import 'package:uni_verse/l10n/app_locale.dart';
 import 'package:uni_verse/presentation/create_account.dart';
 import 'package:uni_verse/presentation/helpers/Budgeting.dart';
 import 'package:uni_verse/presentation/helpers/libraries.dart';
-import 'package:uni_verse/presentation/helpers/prayer_rooms.dart';
 import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
+import 'package:uni_verse/presentation/time_management.dart';
 
 import 'generated/l10n.dart';
 
@@ -46,12 +46,13 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
-                  home: PrayerRooms(),
+                  home: HomePage(),
                   routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
                     NewPassword.route: (context) => const NewPassword(),
-                    HomePage.route: (context) => const HomePage()
+                    HomePage.route: (context) => const HomePage(),
+                    TimeManagement.route: (context) => const TimeManagement()
                   },
                 );
               },
