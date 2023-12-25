@@ -1,60 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+import 'package:uni_verse/presentation/common/rounded_text_form_field.dart';
 import 'package:uni_verse/presentation/common/to_do_tile.dart';
 
 class ToDo extends StatelessWidget {
-  const ToDo({Key? key}) : super(key: key);
+  const ToDo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController todoController = TextEditingController();
-    return Scaffold(
-      resizeToAvoidBottomInset: true,
-         body: Column(
-           children: [
-             Align(
-               alignment: Alignment.topRight,
-               child: IconButton(
-                    onPressed: () {
-                      showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            return BottomSheet(
-                                onClosing: () {},
-                                builder: (context) {
-                                  return SizedBox(
-                                    height: 300,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text("Add to-do",
-                                            style: TextStyle(fontSize: 22)),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: TextField(
-                                            controller: todoController,
-                                            decoration: InputDecoration(
-                                                enabledBorder: OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        width: 3, color: Colors.blue),
-                                                    borderRadius:
-                                                        BorderRadius.circular(25)),
-                                                hintText: "To-Do"),
-                                          ),
-                                        ),
-                                        ElevatedButton(
-                                            onPressed: () {}, child: Text("Add"))
-                                      ],
-                                    ),
-                                  );
-                                });
-                          });
-                    },
-                    icon: Icon(Icons.add)),
-             ),
-             ToDoTile(label: "study")
-           ],
-         )
+    return SafeArea(
+      child: Scaffold(
+           body: Column(
+             children: [
+               Container(height: 70.h,),
+               Align(
+                 alignment: Alignment.bottomRight,
+                 child: Padding(
+                   padding: const EdgeInsets.all(15.0),
+                   child: FloatingActionButton(
+      
+                     child: Icon(Icons.add),
+                        onPressed: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return ConstrainedBox(
+                                  constraints: BoxConstraints(maxHeight: 10.h),
+                                  child: AlertDialog(title: const Text('Add to-do'),
+                                    content: TextFormField(),
+                                    actions: [
+                                      TextButton(onPressed: (){Navigator.pop(context);}, child: const Text('Add')),
+                                      TextButton(onPressed: (){Navigator.pop(context);}, child: const Text('Cancel'))
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
+                        ),
+                 ),
+               ),
+             ],
+           )
+      ),
     );
   }
 }
