@@ -16,49 +16,55 @@ class _LibrariesState extends State<Libraries> {
     super.initState();
   }
 
-
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            "Libraries",
-            style: TextStyle(fontSize: 25),
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              "Libraries",
+              style: TextStyle(fontSize: 25),
+            ),
           ),
+          backgroundColor: Colors.purple,
         ),
-        backgroundColor: Colors.purple,
-      ),
-      body: ListView.builder(itemBuilder: (context, index){
-        return _getPlaceCard(_places[index]);
-      },
-      itemCount: _places.length,
-        shrinkWrap: true,
-      )
-         
-    );
+        body: ListView.builder(
+          itemBuilder: (context, index) {
+            return _getPlaceCard(_places[index]);
+          },
+          itemCount: _places.length,
+          shrinkWrap: false,
+        ));
   }
 
   Widget _getPlaceCard(PlaceModel model) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      elevation: 18,
-      color: Colors.grey[300],
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            Image.asset(model.image),
-            SizedBox(
-              height: 10,
-            ),
-            Text(model.title, style: TextStyle(fontSize: 25),),
-            SizedBox(
-              height: 10,
-            ),
-            Text(model.place, style: TextStyle(fontSize: 25),)
-          ],
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 15,
+        color: Colors.grey[300],
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Image.asset(model.image),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                model.title,
+                style: TextStyle(fontSize: 25),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                model.place,
+                style: TextStyle(fontSize: 25),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -70,17 +76,13 @@ class _LibrariesState extends State<Libraries> {
         title: "Faculty of Agriculture Library",
         place: "Second Floor"));
     _places.add(PlaceModel(
-        image: "assets/it.jpg",
-        title: "IT Library",
-        place: "Third Floor"));
+        image: "assets/it.jpg", title: "IT Library", place: "Third Floor"));
     _places.add(PlaceModel(
-        image: "assets/law.jpg",
-        title: "Faculty of Law Library",
-        place: "GF"));
-    _places.add(PlaceModel(image: "assets/medicine.jpg",
+        image: "assets/law.jpg", title: "Faculty of Law Library", place: "GF"));
+    _places.add(PlaceModel(
+        image: "assets/medicine.jpg",
         title: "Faculty of Medicine Library",
         place: "First Floor"));
-
   }
 }
 
