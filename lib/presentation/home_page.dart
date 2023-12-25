@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uni_verse/presentation/common/categories_container.dart';
+import 'package:uni_verse/presentation/time_management.dart';
 
 class HomePage extends StatelessWidget {
   static String route = "HomePage";
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
             fontSize:
             Theme.of(context).textTheme.bodyLarge?.fontSize), textAlign: TextAlign.center,),
             SizedBox(height: 3.h,),
-            CategoriesContainer(label: const Text('Time management'), icon: CupertinoIcons.time_solid, onTap: (){},),
+            CategoriesContainer(label: const Text('Time management'), icon: CupertinoIcons.time_solid, onTap: (){Navigator.pushNamed(context, TimeManagement.route);},),
             SizedBox(
               height: 5.h,
             ),
