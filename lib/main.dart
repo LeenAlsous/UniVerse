@@ -4,6 +4,8 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:sizer/sizer.dart';
 import 'package:uni_verse/l10n/app_locale.dart';
 import 'package:uni_verse/presentation/create_account.dart';
+import 'package:uni_verse/presentation/helpers/Budgeting.dart';
+import 'package:uni_verse/presentation/helpers/libraries.dart';
 import 'package:uni_verse/presentation/home_page.dart';
 import 'package:uni_verse/presentation/new_password.dart';
 import 'package:uni_verse/presentation/sign_in.dart';
@@ -44,7 +46,7 @@ class UniVerse extends StatelessWidget {
                       bodyMedium: TextStyle(fontSize: 14),
                     ),
                   ),
-                  home: const HomePage(),
+                  home: Libraries(),
                   routes: {
                     CreateAccount.route: (context) => const CreateAccount(),
                     SignIn.route: (context) => const SignIn(),
